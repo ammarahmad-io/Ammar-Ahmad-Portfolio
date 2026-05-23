@@ -6,7 +6,6 @@ import { Github, Linkedin, Mail, ExternalLink, ChevronDown } from 'lucide-react'
 const roles = [
   { text: 'Full Stack Developer', highlight: '& Software Engineer' },
   { text: 'AI & ML', highlight: 'Engineer' },
-  { text: 'Data', highlight: 'Scientist' },
 ];
 
 export default function Hero() {

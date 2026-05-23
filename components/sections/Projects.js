@@ -6,53 +6,43 @@ import { Github, ExternalLink } from 'lucide-react';
 const projects = [
   {
     category: 'software',
-    title: 'E-Commerce Platform',
+    title: 'Hotel management platform',
     description:
-      'A full-stack e-commerce platform with product management, cart, checkout, and admin dashboard. Built with Next.js and Stripe integration.',
-    tech: ['Next.js', 'Node.js', 'MongoDB', 'Stripe', 'TailwindCSS'],
+      'A full-stack Hotel management platform with product management, Bookings, Cabins, and admin dashboard. Built with React js and Supabase.',
+    tech: ['React.js', 'Supabase', 'Tankstack React query', 'React hook form', 'Styled Components'],
     github: '#',
     live: '#',
     gradient: 'from-blue-500/20 to-indigo-500/20',
   },
   {
-    category: 'software',
-    title: 'Real-Time Chat App',
+    category: 'Agentic Ai',
+    title: 'AI Coding Assistant',
     description:
-      'A WebSocket-based real-time messaging application with rooms, user authentication, and message history persisted in a database.',
-    tech: ['React', 'Socket.io', 'Express', 'PostgreSQL', 'JWT'],
+      'A Coding related Ai Assistant that can read, write and modify your files directly from your terminal',
+    tech: ['Python', 'Openai Api', 'Os'],
     github: '#',
     live: '#',
     gradient: 'from-purple-500/20 to-pink-500/20',
   },
   {
-    category: 'data',
-    title: 'Data Dashboard & Analytics',
+    category: 'Agentic Ai',
+    title: 'RAG-Based Document Chat System',
     description:
-      'Interactive analytics dashboard for visualizing complex datasets with charts, filters, and export functionality.',
-    tech: ['React', 'Chart.js', 'Python', 'FastAPI', 'Pandas'],
+      'Developed a Retrieval-Augmented Generation pipeline using LangChain and FastAPI.',
+    tech: ['React js', 'Rag', 'Vector Embeddings', 'FastAPI', 'Langchain'],
     github: '#',
     live: '#',
     gradient: 'from-emerald-500/20 to-teal-500/20',
   },
   {
     category: 'software',
-    title: 'Task Management System',
+    title: 'Fast React Pizza',
     description:
-      'A Kanban-style project management tool with drag-and-drop boards, team collaboration, and deadline tracking.',
-    tech: ['Next.js', 'Prisma', 'PostgreSQL', 'React DnD', 'Shadcn UI'],
+      'React based Pizza Ordering website with Menus, Cart , admin dashboard',
+    tech: ['React.js', 'Redux toolkit', 'Tailwind css', 'Frontend'],
     github: '#',
     live: '#',
     gradient: 'from-orange-500/20 to-amber-500/20',
-  },
-  {
-    category: 'data',
-    title: 'ML Prediction API',
-    description:
-      'A RESTful API exposing a machine learning model for making real-time predictions. Includes model training pipeline and monitoring.',
-    tech: ['Python', 'FastAPI', 'Scikit-learn', 'Docker', 'PostgreSQL'],
-    github: '#',
-    live: '#',
-    gradient: 'from-cyan-500/20 to-blue-500/20',
   },
   {
     category: 'software',
@@ -70,6 +60,7 @@ const filters = [
   { label: 'All Projects', value: 'all' },
   { label: 'Software Development', value: 'software' },
   { label: 'Data Science & ML', value: 'data' },
+  { label: 'Agentic Ai', value: 'Agentic Ai' },
 ];
 
 export default function Projects() {

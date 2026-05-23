@@ -57,14 +57,17 @@ export default function Resume() {
           {/* Buttons */}
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="#"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-accent transition-all duration-200 hover:-translate-y-0.5"
             >
               <Eye size={18} />
               Preview Resume
             </a>
             <a
-              href="#"
+              href="/resume.pdf"
+              download="Ammar-Ahmad-Resume.pdf"
               className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all duration-200 hover:-translate-y-0.5 shadow-md"
             >
               <Download size={18} />
@@ -73,7 +76,7 @@ export default function Resume() {
           </div>
 
           <p className="text-xs text-muted-foreground mt-6">
-            📎 Resume will be linked once uploaded
+            📎 Click preview to open your resume in a new tab, or download it directly to your machine.
           </p>
         </div>
       </div>

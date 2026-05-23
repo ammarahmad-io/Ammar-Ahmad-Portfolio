@@ -3,50 +3,51 @@
 import { useEffect, useRef } from 'react';
 import { MapPin, Calendar, Briefcase, GraduationCap } from 'lucide-react';
 
-const experiences = [
-  {
-    type: 'work',
-    icon: <Briefcase size={18} />,
-    title: 'Full Stack Developer',
-    company: 'Company Name',
-    duration: 'Jan 2023 – Present',
-    location: 'Remote / Pakistan',
-    points: [
-      'Built and maintained scalable web applications using React, Next.js, and Node.js, serving thousands of daily users.',
-      'Architected RESTful APIs and integrated third-party services to enhance platform functionality.',
-      'Improved application performance by 40% through code optimization and caching strategies.',
-      'Collaborated with cross-functional teams to deliver high-quality features on time.',
-    ],
-    techs: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'TailwindCSS', 'REST APIs'],
-  },
-  {
-    type: 'work',
-    icon: <Briefcase size={18} />,
-    title: 'Frontend Developer Intern',
-    company: 'Startup / Agency',
-    duration: 'Jun 2022 – Dec 2022',
-    location: 'Remote',
-    points: [
-      'Developed responsive UI components using React and Vanilla CSS.',
-      'Implemented pixel-perfect designs from Figma prototypes.',
-      'Reduced page load time by optimizing assets and lazy loading techniques.',
-    ],
-    techs: ['React', 'JavaScript', 'CSS', 'HTML', 'Figma'],
-  },
-  {
-    type: 'education',
-    icon: <GraduationCap size={18} />,
-    title: 'Bachelor of Science — Computer Science',
-    company: 'University Name',
-    duration: '2019 – 2023',
-    location: 'Pakistan',
-    points: [
-      'Graduated with strong foundations in algorithms, data structures, and software engineering.',
-      'Completed projects in web development, databases, and machine learning.',
-    ],
-    techs: ['Data Structures', 'Algorithms', 'OOP', 'Databases', 'Web Dev'],
-  },
-];
+// const experiences = [
+//   {
+//     type: 'work',
+//     icon: <Briefcase size={18} />,
+//     title: 'Full Stack Developer',
+//     company: 'Company Name',
+//     duration: 'Jan 2023 – Present',
+//     location: 'Remote / Pakistan',
+//     points: [
+//       'Built and maintained scalable web applications using React, Next.js, and Node.js, serving thousands of daily users.',
+//       'Architected RESTful APIs and integrated third-party services to enhance platform functionality.',
+//       'Improved application performance by 40% through code optimization and caching strategies.',
+//       'Collaborated with cross-functional teams to deliver high-quality features on time.',
+//     ],
+//     techs: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'TailwindCSS', 'REST APIs'],
+//   },
+//   {
+//     type: 'work',
+//     icon: <Briefcase size={18} />,
+//     title: 'Frontend Developer Intern',
+//     company: 'Startup / Agency',
+//     duration: 'Jun 2022 – Dec 2022',
+//     location: 'Remote',
+//     points: [
+//       'Developed responsive UI components using React and Vanilla CSS.',
+//       'Implemented pixel-perfect designs from Figma prototypes.',
+//       'Reduced page load time by optimizing assets and lazy loading techniques.',
+//     ],
+//     techs: ['React', 'JavaScript', 'CSS', 'HTML', 'Figma'],
+//   },
+//   {
+//     type: 'education',
+//     icon: <GraduationCap size={18} />,
+//     title: 'Bachelor of Science — Computer Science',
+//     company: 'University Name',
+//     duration: '2019 – 2023',
+//     location: 'Pakistan',
+//     points: [
+//       'Graduated with strong foundations in algorithms, data structures, and software engineering.',
+//       'Completed projects in web development, databases, and machine learning.',
+//     ],
+//     techs: ['Data Structures', 'Algorithms', 'OOP', 'Databases', 'Web Dev'],
+//   },
+// ];
+const experiences = []
 
 export default function Experience() {
   const sectionRef = useRef(null);
@@ -91,7 +92,7 @@ export default function Experience() {
           <div className="timeline-line" />
 
           <div className="space-y-10">
-            {experiences.map((exp, i) => (
+            {experiences.length > 0 ? experiences.map((exp, i) => (
               <div
                 key={i}
                 className="reveal relative"
@@ -147,7 +148,7 @@ export default function Experience() {
                   </div>
                 </div>
               </div>
-            ))}
+            )) : <div>No Experience yet... Waiting for Oppurtunities</div> }
           </div>
         </div>
       </div>

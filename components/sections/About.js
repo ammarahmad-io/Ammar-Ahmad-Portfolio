@@ -7,7 +7,7 @@ const stats = [
   { icon: <Zap size={20} />, label: 'Years Experience', value: '3+' },
   { icon: <Layers size={20} />, label: 'Projects Built', value: '20+' },
   { icon: <Code2 size={20} />, label: 'Technologies', value: '15+' },
-  { icon: <Award size={20} />, label: 'Happy Clients', value: '10+' },
+  { icon: <Award size={20} />, label: 'Happy Clients', value: '0+' },
 ];
 
 export default function About() {
@@ -55,15 +55,12 @@ export default function About() {
             </p>
             <p className="reveal text-muted-foreground text-base lg:text-lg leading-relaxed"
               style={{ opacity: 0, transform: 'translateY(20px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
-              I love working across the entire stack — from designing elegant UIs to architecting
-              robust backend systems. My goal is to write code that not only works but is maintainable,
-              readable, and future-proof.
+              Strong interest in Agentic AI, LLM engineering, backend systems, and scalable AI
+applications. Experienced in Python, FastAPI, Docker, frontend development, API integration, LangChain,
+LangGraph, RAG systems. Passionate about building real-world AI products and continuously expanding expertise in
+Machine Learning, Deep Learning, Transformers, and LLM fine-tuning.
             </p>
-            <p className="reveal text-muted-foreground text-base lg:text-lg leading-relaxed"
-              style={{ opacity: 0, transform: 'translateY(20px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
-              When I&apos;m not coding, I enjoy exploring new tech trends, contributing to open source,
-              and continuously leveling up my skills.
-            </p>
+            
 
             <div className="reveal pt-2"
               style={{ opacity: 0, transform: 'translateY(20px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>

@@ -6,6 +6,8 @@ import { Mail, MapPin, Linkedin, Github, Send, CheckCircle } from 'lucide-react'
 export default function Contact() {
   const sectionRef = useRef(null);
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
   useEffect(() => {
@@ -29,15 +31,43 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    setForm({ name: '', email: '', message: '' });
+    setError('');
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/dev.ammar.io@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to send message.');
+      }
+
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 4000);
+      setForm({ name: '', email: '', message: '' });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const contactInfo = [
-    { icon: <Mail size={20} />, label: 'Email', value: 'businessinquiries650@gmail.com', href: 'mailto:[businessinquiries650@gmail.com]' },
+    { icon: <Mail size={20} />, label: 'Email', value: 'dev.ammar.io@gmail.com', href: 'mailto:dev.ammar.io@gmail.com' },
     { icon: <MapPin size={20} />, label: 'Location', value: 'Pakistan 🇵🇰', href: null },
     { icon: <Linkedin size={20} />, label: 'LinkedIn', value: 'https://www.linkedin.com/in/ammarahmaddev/', href: 'https://linkedin.com' },
     { icon: <Github size={20} />, label: 'GitHub', value: 'https://github.com/ammarahmad-io', href: 'https://github.com' },
@@ -62,7 +92,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid">
           {/* Left: Contact Info */}
           <div className="space-y-5">
             {contactInfo.map((item, i) => (
@@ -109,7 +139,7 @@ export default function Contact() {
           </div>
 
           {/* Right: Contact Form */}
-          <div
+          {/* <div
             className="reveal bg-card border border-border rounded-2xl p-7 shadow-sm"
             style={{ opacity: 0, transform: 'translateY(20px)', transition: 'opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s' }}
           >
@@ -167,16 +197,21 @@ export default function Contact() {
                   />
                 </div>
 
+                {error && (
+                  <p className="text-sm text-red-500">{error}</p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all duration-200 hover:-translate-y-0.5 shadow-md cursor-pointer"
+                  disabled={isLoading}
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all duration-200 hover:-translate-y-0.5 shadow-md cursor-pointer disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   <Send size={17} />
-                  Send Message
+                  {isLoading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
 
