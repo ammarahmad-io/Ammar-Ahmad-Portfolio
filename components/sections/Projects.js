@@ -16,6 +16,16 @@ const projects = [
   },
   {
     category: 'Agentic Ai',
+    title: 'AI Story generator',
+    description:
+      'An AI-powered story generator for children (0-15 years) that creates personalized stories with illustrations.',
+    tech: ['Python', 'Openai Api', 'fastapi','Authentication','laggraph','Agnes Ai'],
+    github: '#',
+    live: '#',
+    gradient: 'from-purple-500/20 to-pink-500/20',
+  },
+  {
+    category: 'Agentic Ai',
     title: 'AI Coding Assistant',
     description:
       'A Coding related Ai Assistant that can read, write and modify your files directly from your terminal',
@@ -24,6 +34,7 @@ const projects = [
     live: '#',
     gradient: 'from-purple-500/20 to-pink-500/20',
   },
+  
   {
     category: 'Agentic Ai',
     title: 'RAG-Based Document Chat System',
